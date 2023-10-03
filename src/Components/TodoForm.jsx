@@ -18,7 +18,7 @@ function TodoForm() {
                 <input
                     type="text"
                     placeholder='Write your next Task'
-                    className=' rounded-xl p-2 border border-gray-400 bg-transparent'
+                    className=' rounded-xl p-2 border border-gray-400 bg-transparent text-gray-300 p-3'
                     value={todo}
                     onChange={(e) => setTodo(e.target.value)}
                 />
