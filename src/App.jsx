@@ -10,12 +10,14 @@ function App() {
     setTodos((prev) => [{ id: Date.now(), ...todo }, ...prev])
   }
   const updateTodo = (id, todo) => {
+    console.log("ff")
     setTodos((prev) => prev.map((prevtodo) => (prevtodo.id === id ? todo : prevtodo)))
   }
   const deleteTodo = (id) => {
     setTodos((prev) => prev.filter((prevtodo) => prevtodo.id !== id))
   }
   const toggleComplete = (id) => {
+    
     setTodos((prev) => prev.map((prevtodo) => (prevtodo.id === id ? { ...prevtodo, complete: !prevtodo.complete } : prevtodo)))
   }
 
@@ -23,13 +25,13 @@ function App() {
     const storedTodos = localStorage.getItem("todos");
     if (storedTodos) {
       const todos = JSON.parse(storedTodos);
-      console.log(todos);
+      // console.log(todos);
       setTodos(todos);
     }
   }, []);
-  
+   
   useEffect(() => {
-    console.log(todos)
+    // console.log(todos)
     localStorage.setItem("todos", JSON.stringify(todos))
 
   }, [todos])
@@ -41,7 +43,7 @@ function App() {
         <div >
           <TodoForm />
         </div>
-        <div className="bg-white">
+        <div className="flex flex-col gap-3">
           {todos.map((todo) => (
             <div key={todo.id}><Todoitems todo={todo} /></div>
           ))}

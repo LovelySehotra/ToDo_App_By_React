@@ -54,7 +54,7 @@ function Todoitems({ todo }) {
                 }}
             >{isEditable ?"📁" : "✏️"}</button>
             <button
-                onClick={deletedTodo}> ❌</button>
+                onClick={deletedTodo}> 🗑</button>
         </div>
     )
 }
